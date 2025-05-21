@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Title",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "Lorem ipsum dolor sit amet."
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    }
+  }
+}
